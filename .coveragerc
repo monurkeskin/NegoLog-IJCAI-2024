@@ -1,0 +1,23 @@
+[run]
+branch = true
+source =
+    nenv
+    agents/CBOM
+    domain_generator
+omit =
+    tests/*
+    */tests/*
+    examples/*
+    */examples/*
+    docs/*
+    docs-source/*
+    */_vendor/*
+
+[report]
+show_missing = true
+precision = 2
+exclude_also =
+    pragma: no cover
+    def __repr__
+    raise NotImplementedError
+    if __name__ == .__main__.:
