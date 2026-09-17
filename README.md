@@ -4,6 +4,9 @@ Anıl Doğru · Mehmet Onur Keskin · Catholijn M. Jonker · Tim Baarslag · Rey
 
 [Paper](https://doi.org/10.24963/ijcai.2024/998) · [Try NegoLog V2](#quickstart) · [Usage guides](docs-source/README.md) · [Components](docs-source/components.rst) · [Citation](#cite-negolog)
 
+[![Tests](https://github.com/monurkeskin/NegoLog-IJCAI-2024/actions/workflows/tests.yml/badge.svg)](https://github.com/monurkeskin/NegoLog-IJCAI-2024/actions/workflows/tests.yml)
+[![codecov](https://codecov.io/gh/monurkeskin/NegoLog-IJCAI-2024/branch/main/graph/badge.svg)](https://codecov.io/gh/monurkeskin/NegoLog-IJCAI-2024)
+
 An agent can reach a good agreement for different reasons: its bidding tactic,
 its estimate of the opponent's preferences, or the opportunities in the domain.
 **NegoLog lets researchers examine those components as well as the final score.**
