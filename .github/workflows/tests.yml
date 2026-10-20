@@ -9,6 +9,10 @@ on:
 permissions:
   contents: read
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}-${{ (github.event_name == 'workflow_dispatch' || github.ref_type == 'tag') && github.run_id || github.event_name }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' || (github.event_name == 'push' && github.ref_type == 'branch') }}
+
 jobs:
   test:
     name: Python 3.10 / ${{ matrix.os }}
@@ -41,7 +45,7 @@ jobs:
         run: python -m pytest -q -p no:cacheprovider --cov --cov-config=.coveragerc --cov-report=xml:coverage.xml tests
       - name: Upload coverage reports to Codecov
         if: matrix.os == 'ubuntu-latest'
-        uses: codecov/codecov-action@v5
+        uses: codecov/codecov-action@0fb7174895f61a3b6b78fc075e0cd60383518dac # v5
         with:
           files: coverage.xml
           fail_ci_if_error: false
